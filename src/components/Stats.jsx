@@ -309,6 +309,26 @@ export default function Stats() {
               alt="Client Logo 11" 
               className="h-10 md:h-12 w-auto object-contain"
             />
+            <img 
+              src="https://lh3.googleusercontent.com/d/1rB0tXv-NVgm8-WOepy41J5JctES_ueLX" 
+              alt="Client Logo 12" 
+              className="h-10 md:h-12 w-auto object-contain"
+            />
+            <img 
+              src="https://lh3.googleusercontent.com/d/1Dlu3bCP_9hCN3nMVJGUHq2qDHriusc8j" 
+              alt="Client Logo 13" 
+              className="h-10 md:h-12 w-auto object-contain"
+            />
+            <img 
+              src="https://lh3.googleusercontent.com/d/1l2qdIqMmxm-fAfHxVf4pwKuO68vmQqdt" 
+              alt="Client Logo 14" 
+              className="h-10 md:h-12 w-auto object-contain"
+            />
+            <img 
+              src="https://lh3.googleusercontent.com/d/12_i_evAuK9XxayotZrQl9A0o8bigXBdH" 
+              alt="Client Logo 15" 
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </div>
         </motion.div>
       </div>
