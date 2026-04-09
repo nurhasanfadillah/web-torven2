@@ -18,7 +18,7 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { icon: Instagram, href: 'https://www.instagram.com/torven_industries?igsh=MWc4N2ZzYzhzOXV4dg%3D%3D&utm_source=qr', label: 'Instagram' },
+  { icon: Instagram, href: 'https://www.instagram.com/torven_industries', label: 'Instagram' },
   { icon: ShoppingCart, href: 'https://id.shp.ee/qm4bzVH4', label: 'Shopee' },
   { icon: Video, href: 'https://tiktok.com/@torvenofficial', label: 'TikTok' },
 ]
