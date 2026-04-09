@@ -27,15 +27,83 @@ const testimonials = [
     role: "Ketua Komunitas Entreprenuer Muda",
     text: "Konsultasi design-nya sangat membantu. Hasil sablon rapi dan warna tajam. Pasti repeat order!",
     avatar: "👨‍🎨"
+  },
+  {
+    name: "Dewi Lestari",
+    role: "Owner Boutik Hijab",
+    text: " Tas goodie bag untuk pernikahan anak saya hasilnya memuaskan! Bahannya tebal dan sablonan rapi. Semua tamu praise!",
+    avatar: "👩‍🦱"
+  },
+  {
+    name: "Hendra Wijaya",
+    role: "Direksi PT Berkah Bersama",
+    text: "Sudah 3 kali repeat order untuk tas seminar perusahaan. Kualitas konsisten dan selalu tepat waktu. Sangat profesional!",
+    avatar: "👨‍💻"
+  },
+  {
+    name: "Rina Amelia",
+    role: "Penyelenggara Workshop",
+    text: "Pesan 150 pcs tas untuk workshop motivasi. Hasilnya exceed expectation! Logo jelas, warna vibrant. Worth it banget!",
+    avatar: "👩‍🏫"
+  },
+  {
+    name: "Pak Budi",
+    role: "Pemilik Warung Kopi Nusantara",
+    text: "Buat tas branded untuk gift ke partner bisnis. Desain eksklusif, bahan premium. Tamu senang banget dapat gift ini!",
+    avatar: "👨‍🍳"
+  },
+  {
+    name: "Anisa Zahra",
+    role: "Event Organizer",
+    text: "Sudah合作 dengan Torven untuk 10+ event. Selalu on time, kualitas oke, harga bersahabat. Recommended untuk event!",
+    avatar: "👩‍🎓"
+  },
+  {
+    name: "Joko Pramono",
+    role: "Marketing Manager",
+    text: "Tas custom untuk campaign marketing kami hasilnya keren! Brand awareness naik 40%. Torven partner yang bisa diandalkan!",
+    avatar: "👨‍💪"
+  },
+  {
+    name: "Maya Sari",
+    role: "Startup Founder",
+    text: "Merchandise startup kami dari Torven bikin branded awareness naik! Desain modern, kualitas premium. Sukses terus Torven!",
+    avatar: "👩‍🚀"
   }
 ]
+
+function TestimonialCard({ testimonial }) {
+  return (
+    <div className="flex-shrink-0 w-80 md:w-96 glass-card rounded-2xl p-6 mx-3">
+      <div className="flex items-center gap-4 mb-4">
+        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-glow-cyan to-glow-blue flex items-center justify-center">
+          <span className="text-xl">{testimonial.avatar}</span>
+        </div>
+        <div>
+          <p className="text-white font-semibold">{testimonial.name}</p>
+          <p className="text-slate-400 text-sm">{testimonial.role}</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-1 mb-3">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} className="w-4 h-4 fill-glow-cyan text-glow-cyan" />
+        ))}
+      </div>
+      <p className="text-slate-300 italic text-sm">
+        "{testimonial.text}"
+      </p>
+    </div>
+  )
+}
 
 export default function SocialProof() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
+  const duplicatedTestimonials = [...testimonials, ...testimonials]
+
   return (
-    <section id="testimoni" ref={ref} className="py-16 px-4 sm:px-6 lg:px-8">
+    <section id="testimoni" ref={ref} className="py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -77,34 +145,28 @@ export default function SocialProof() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="glass-card rounded-3xl p-6 md:p-8"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-glow-cyan to-glow-blue flex items-center justify-center">
-                  <span className="text-2xl">{testimonial.avatar}</span>
-                </div>
-                <div>
-                  <p className="text-white font-semibold">{testimonial.name}</p>
-                  <p className="text-slate-400 text-sm">{testimonial.role}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-1 mb-3">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-glow-cyan text-glow-cyan" />
-                ))}
-              </div>
-              <p className="text-slate-300 italic">
-                "{testimonial.text}"
-              </p>
-            </motion.div>
-          ))}
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-bg-primary to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-bg-primary to-transparent z-10" />
+          
+          <motion.div
+            className="flex gap-4"
+            animate={{
+              x: [0, -50 + '%']
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 30,
+                ease: "linear"
+              }
+            }}
+          >
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <TestimonialCard key={`${testimonial.name}-${index}`} testimonial={testimonial} />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
