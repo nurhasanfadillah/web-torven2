@@ -31,7 +31,7 @@ const testimonials = [
   {
     name: "Dewi Lestari",
     role: "Owner Boutik Hijab",
-    text: " Tas goodie bag untuk pernikahan anak saya hasilnya memuaskan! Bahannya tebal dan sablonan rapi. Semua tamu praise!",
+    text: "Tas goodie bag untuk pernikahan anak saya hasilnya memuaskan! Bahannya tebal dan sablonan rapi. Semua tamu praise!",
     avatar: "👩‍🦱"
   },
   {
@@ -55,7 +55,7 @@ const testimonials = [
   {
     name: "Anisa Zahra",
     role: "Event Organizer",
-    text: "Sudah合作 dengan Torven untuk 10+ event. Selalu on time, kualitas oke, harga bersahabat. Recommended untuk event!",
+    text: "Sudah bekerja sama dengan Torven untuk 10+ event. Selalu on time, kualitas oke, harga bersahabat. Recommended untuk event!",
     avatar: "👩‍🎓"
   },
   {
@@ -67,8 +67,56 @@ const testimonials = [
   {
     name: "Maya Sari",
     role: "Startup Founder",
-    text: "Merchandise startup kami dari Torven bikin branded awareness naik! Desain modern, kualitas premium. Sukses terus Torven!",
+    text: "Merchandise startup kami dari Torven bikin brand awareness naik! Desain modern, kualitas premium. Sukses terus Torven!",
     avatar: "👩‍🚀"
+  },
+  {
+    name: "Tono Suhartono",
+    role: "Pemilik Toko Fashion",
+    text: "Tas custom untuk branding toko kami hasilnya super keren! Bahan berkualitas, jahitan rapi. Pelanggan suka banget!",
+    avatar: "👨‍🎭"
+  },
+  {
+    name: "Lisa Permata",
+    role: "Manajer HRD Corporate",
+    text: "Pesen tas untuk employee gathering, hasilnya luar biasa! Logo clear, warna sesuai. Receptionist kagum!",
+    avatar: "👩‍💼"
+  },
+  {
+    name: "Rudi Hermawan",
+    role: "Pengusaha Catering",
+    text: "Tas goodie bag untuk event catering kami bikin image perusahaan naik! Klien happy dapat gift premium dari Torven.",
+    avatar: "👨‍🍽️"
+  },
+  {
+    name: "Nadia Putri",
+    role: "Influencer & Content Creator",
+    text: "Merchandise untuk subscriber dari Torven berkualitas! Desain aesthetic, packaging rapi. Subscriber suka banget!",
+    avatar: "👩‍🎬"
+  },
+  {
+    name: "Asep Kusuma",
+    role: "Owner Coffee Shop",
+    text: "Tas tote bag untuk brand coffee shop kami minimalis tapi elegan! Bahan kuat, sablon tahan lama. Mantap!",
+    avatar: "👨‍☕"
+  },
+  {
+    name: "Wati Ningsih",
+    role: "Guru & организатор",
+    text: "Buat tas untuk hadiah guru di sekolah. Desain bagus, harga student-friendly. Rekan guru suka!",
+    avatar: "👩‍🏫"
+  },
+  {
+    name: "Dedi Kurniawan",
+    role: "Pemilik Distro Clothing",
+    text: "Kolaborasi dengan Torven untuk tas distro kami. Quality control ketat, hasil selalu memuaskan. Partner terpercaya!",
+    avatar: "👨‍👔"
+  },
+  {
+    name: "Yuni Astuti",
+    role: "Perencana Event",
+    text: "Sudah 20+ event ditangani bareng Torven. Always deliver on time, kualitas juara. Worth every penny!",
+    avatar: "👩‍🎪"
   }
 ]
 
@@ -158,7 +206,7 @@ export default function SocialProof() {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 20,
+                duration: 40,
                 ease: "linear"
               }
             }}
