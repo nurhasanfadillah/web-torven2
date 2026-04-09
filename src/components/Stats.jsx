@@ -257,57 +257,57 @@ export default function Stats() {
             <img 
               src="https://lh3.googleusercontent.com/d/1fINTQmAuWDJdHosZ_bMXjOXXGqbtmsja" 
               alt="Client Logo 1" 
-              className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="h-8 md:h-10 w-auto object-contain"
             />
             <img 
               src="https://lh3.googleusercontent.com/d/1IUZngmSUwY3mharsGNQfTMW0oLzfV1-f" 
               alt="Client Logo 2" 
-              className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="h-8 md:h-10 w-auto object-contain"
             />
             <img 
               src="https://lh3.googleusercontent.com/d/1GIrDKewqrz_RwNLOKbZ6pMdPQTlHTVTv" 
               alt="Client Logo 3" 
-              className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="h-8 md:h-10 w-auto object-contain"
             />
             <img 
               src="https://lh3.googleusercontent.com/d/1nohZOoy_ptNl8XL3jat8_Ip1VpaPadSw" 
               alt="Client Logo 4" 
-              className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="h-8 md:h-10 w-auto object-contain"
             />
             <img 
               src="https://lh3.googleusercontent.com/d/1Kfp_ZWiFOZIp0ZSBAsCufukWxBvIsPkz" 
               alt="Client Logo 5" 
-              className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="h-8 md:h-10 w-auto object-contain"
             />
             <img 
               src="https://lh3.googleusercontent.com/d/1Qc0nAiTDWfNdQGhBcKh34tTTQJuIN1vh" 
               alt="Client Logo 6" 
-              className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="h-8 md:h-10 w-auto object-contain"
             />
             <img 
               src="https://lh3.googleusercontent.com/d/1C_b0UXid4UC2CBr5kUoe-ZMaAjwEJG_H" 
               alt="Client Logo 7" 
-              className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="h-8 md:h-10 w-auto object-contain"
             />
             <img 
               src="https://lh3.googleusercontent.com/d/1s8e3VSBEXgJ_UItqIVsrvzXp-0GF6o18" 
               alt="Client Logo 8" 
-              className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="h-8 md:h-10 w-auto object-contain"
             />
             <img 
               src="https://lh3.googleusercontent.com/d/1oYUd3j5xg1inJhk9APy8YtUfk7iqPkij" 
               alt="Client Logo 9" 
-              className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="h-8 md:h-10 w-auto object-contain"
             />
             <img 
               src="https://lh3.googleusercontent.com/d/1nFfEg4ZKV5Dk_boqr2CKHTMCviDO26Tl" 
               alt="Client Logo 10" 
-              className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="h-8 md:h-10 w-auto object-contain"
             />
             <img 
               src="https://lh3.googleusercontent.com/d/1usVRBEvPvdsidD4dI6eZRKPftX1K_sE2" 
               alt="Client Logo 11" 
-              className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+              className="h-8 md:h-10 w-auto object-contain"
             />
           </div>
         </motion.div>
