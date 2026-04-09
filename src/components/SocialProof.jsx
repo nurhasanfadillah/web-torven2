@@ -1,6 +1,6 @@
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Star, ShoppingBag, Users, Award, CheckCircle } from 'lucide-react'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useRef, useState, useEffect } from 'react'
+import { Star, ShoppingBag, Users, Award, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const socialProofItems = [
   { icon: ShoppingBag, label: 'Tas Terjual', value: '72,429' },
@@ -47,6 +47,113 @@ const testimonials = [
     avatar: "👩‍🏫"
   }
 ]
+
+function TestimonialCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [direction, setDirection] = useState(0)
+
+  const nextSlide = () => {
+    setDirection(1)
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+  }
+
+  const prevSlide = () => {
+    setDirection(-1)
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide()
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const variants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0
+    }),
+    center: {
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => ({
+      x: direction > 0 ? -300 : 300,
+      opacity: 0
+    })
+  }
+
+  const testimonial = testimonials[currentIndex]
+
+  return (
+    <div className="relative max-w-2xl mx-auto">
+      <div className="relative overflow-hidden">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={currentIndex}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="glass-card rounded-2xl p-8"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-glow-cyan to-glow-blue flex items-center justify-center">
+                <span className="text-3xl">{testimonial.avatar}</span>
+              </div>
+              <div>
+                <p className="text-white font-bold text-lg">{testimonial.name}</p>
+                <p className="text-slate-400 text-sm">{testimonial.role}</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 fill-glow-cyan text-glow-cyan" />
+              ))}
+            </div>
+            <p className="text-slate-300 text-lg leading-relaxed italic">
+              "{testimonial.text}"
+            </p>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <button
+        onClick={prevSlide}
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 w-12 h-12 rounded-full glass-card flex items-center justify-center text-white hover:text-glow-cyan transition-colors z-10"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 w-12 h-12 rounded-full glass-card flex items-center justify-center text-white hover:text-glow-cyan transition-colors z-10"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
+      <div className="flex justify-center gap-2 mt-6">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => {
+              setDirection(index > currentIndex ? 1 : -1)
+              setCurrentIndex(index)
+            }}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex 
+                ? 'bg-glow-cyan w-6' 
+                : 'bg-slate-600 hover:bg-slate-500'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function SocialProof() {
   const ref = useRef(null)
@@ -95,35 +202,7 @@ export default function SocialProof() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-              className="glass-card rounded-xl p-4"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-glow-cyan to-glow-blue flex items-center justify-center">
-                  <span className="text-lg">{testimonial.avatar}</span>
-                </div>
-                <div>
-                  <p className="text-white font-medium text-sm">{testimonial.name}</p>
-                  <p className="text-slate-400 text-xs">{testimonial.role}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-glow-cyan text-glow-cyan" />
-                ))}
-              </div>
-              <p className="text-slate-300 text-xs leading-relaxed">
-                "{testimonial.text}"
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <TestimonialCarousel />
       </div>
     </section>
   )
