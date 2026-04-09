@@ -111,7 +111,7 @@ function TestimonialCarousel() {
             </div>
             <div className="flex items-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-glow-cyan text-glow-cyan" />
+                <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
               ))}
             </div>
             <p className="text-slate-300 text-lg leading-relaxed italic">
