@@ -45,17 +45,15 @@ export default function Navbar() {
             ))}
           </div>
 
-          <motion.a
+          <a
             href="https://wa.me/6281212441652?text=Halo%20Torven%2C%20saya%20tertarik%20pesan%20tas%20custom"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-glow-cyan to-glow-blue text-bg-primary font-semibold rounded-full btn-glow animate-pulse-glow"
           >
             <MessageCircle className="w-4 h-4" />
             Hubungi Kami
-          </motion.a>
+          </a>
 
           <button
             onClick={() => setIsOpen(!isOpen)}

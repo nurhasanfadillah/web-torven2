@@ -71,17 +71,15 @@ export default function CTABanner() {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
             >
-            <motion.a
+            <a
               href="https://wa.me/6281212441652?text=Halo%20Torven%2C%20saya%20tertarik%20pesan%20tas%20custom"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               className="group w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-glow-cyan to-glow-blue text-bg-primary font-bold text-lg rounded-full btn-glow inline-flex items-center justify-center gap-3 animate-pulse-glow"
             >
               Chat WhatsApp Sekarang
               <MessageCircle className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
+            </a>
             
             <a href="#portofolio" className="w-full sm:w-auto px-10 py-4 border-2 border-slate-600 text-white font-semibold rounded-full hover:border-glow-cyan hover:bg-glow-cyan/10 transition-all duration-300">
               Lihat Portofolio
