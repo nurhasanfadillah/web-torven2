@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "http://torven.web.id/*"
-  to = "https://torven.web.id/:splat"
+  from = "http://torvenindustries.com/*"
+  to = "https://torvenindustries.com/:splat"
   status = 301
   force = true
 
